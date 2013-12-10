@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nuist.wcw.Activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:name="nuist.wcw.model.SaveSth"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.Sherlock.Light" >
+        <activity
+            android:name="nuist.wcw.Activity.RunActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name" >
+            
+        </activity>
+        <activity 
+            android:name="nuist.wcw.Activity.FirstRunActivity"/>
+        <activity
+            android:name="nuist.wcw.Activity.HistoryActivity"
+            android:icon="@drawable/act_logo"
+            android:label="@string/historyRecord"
+            android:theme="@style/Theme.Sherlock.Light" />
+        <activity
+            android:name="nuist.wcw.Activity.SettingsActivity"
+            android:icon="@drawable/act_logo"
+            android:label="@string/settings"
+            android:theme="@style/Theme.Sherlock.Light" />
+        <activity
+            android:name="nuist.wcw.Activity.AboutActivity"
+            android:icon="@drawable/act_logo"
+            android:label="@string/about"
+            android:theme="@style/Theme.Sherlock.Light" />
+        <activity
+            android:name="nuist.wcw.Activity.ThanksActivity"
+            android:icon="@drawable/act_logo"
+            android:label="@string/thank_open_source"
+            android:theme="@style/Theme.Sherlock.Light" />
+        <activity
+            android:name="nuist.wcw.Activity.CaidanActivity"
+            android:icon="@drawable/act_logo"
+            android:label="@string/caidan_Label"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity 
+            android:name="nuist.wcw.Activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="nuist.wcw.service.TimerService"
+            android:enabled="true" />
+        <service
+            android:name="nuist.wcw.service.GPSService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

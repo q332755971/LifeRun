@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" 
+    android:background="@drawable/timer_bg">
+
+    <FrameLayout 
+        android:id="@+id/firstFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:contentDescription="@string/contentDescription"
+            android:layout_width="fill_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/timer_background" />
+        <ImageView
+            android:contentDescription="@string/contentDescription"
+            android:id="@+id/timer_progress"
+            android:layout_width="fill_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/timer_progress"
+            android:visibility="invisible"/>
+        <ImageView
+            android:contentDescription="@string/contentDescription"
+            android:id="@+id/timer_pointer"
+            android:layout_width="fill_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/timer_pointer" 
+             />
+    
+        <TextView
+            android:id="@+id/recordTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:text="@string/zero" />
+    </FrameLayout>
+    
+    
+    <RelativeLayout
+	  	android:id="@+id/father"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip"
+	    android:layout_alignParentBottom="true"
+	    android:gravity="center"
+	    android:background="@drawable/shape" >
+	
+	    <TextView
+	        android:id="@+id/startAndEnd"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:textSize="20sp"
+	        android:text="@string/startCalTime"
+	        android:textColor="#000000" />
+        </RelativeLayout>
+    
+    <TableLayout 
+        android:layout_below="@id/firstFrame"
+        android:layout_above="@id/father"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+          <TextView 
+              android:id="@+id/speed"
+              android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:text="@string/currentSpeed"/>
+          <TextView 
+              android:id="@+id/heat"
+              android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="@string/costHeat"/>
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+          <nuist.wcw.widget.TextProgressBar
+              android:id="@+id/progressBar"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="30dip" 
+              android:layout_gravity="center"
+              android:progressDrawable="@drawable/progressbar"
+              android:max="100"
+              android:progress="0"
+              android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
